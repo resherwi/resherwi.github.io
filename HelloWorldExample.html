@@ -17,10 +17,10 @@
 // Initialize and add the map
 function initMap() {
   // The location of Uluru
-  var toronto = {lat: 43.717899, lng: -79.65824};
+  var toronto = {lat: 43.652450, lng: -79.384576};
   // The map, centered at Uluru
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 12, center: toronto});
+      document.getElementById('map'), {zoom: 10, center: toronto});
   // The marker, positioned at Uluru
   var marker = new google.maps.Marker({position: toronto, map: map});
   var trafficLayer = new google.maps.TrafficLayer();
@@ -43,11 +43,6 @@ function initMap() {
   map.setStreetView(panorama);
 }
     </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdRKUVkEuXClbi6Td-5wQ3SyLunmtKxfg&callback=initMap">
     </script>
