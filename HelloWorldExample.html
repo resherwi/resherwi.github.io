@@ -20,11 +20,27 @@ function initMap() {
   var toronto = {lat: 43.717899, lng: -79.65824};
   // The map, centered at Uluru
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 8, center: toronto});
+      document.getElementById('map'), {zoom: 12, center: toronto});
   // The marker, positioned at Uluru
   var marker = new google.maps.Marker({position: toronto, map: map});
   var trafficLayer = new google.maps.TrafficLayer();
   trafficLayer.setMap(map);
+}
+ function initialize() {
+  var fenway = {lat: 43.717899, lng: -79.65824};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: fenway,
+    zoom: 14
+  });
+  var panorama = new google.maps.StreetViewPanorama(
+      document.getElementById('pano'), {
+        position: fenway,
+        pov: {
+          heading: 34,
+          pitch: 10
+        }
+      });
+  map.setStreetView(panorama);
 }
     </script>
     <!--Load the API from the specified URL
