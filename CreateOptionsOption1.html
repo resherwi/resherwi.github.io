@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Street View Side-By-Side</title>
+    <title>A Brief Tour of the University of Guelph</title>
     <style>
       html, body {
         height: 100%;
@@ -16,27 +16,30 @@
       }
       
     </style>
+    <!--Sources used for template https://developers.google.com/maps/documentation/javascript/trafficlayer,
+https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/examples/streetview-simple,
+https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/examples/infowindow-simple-->
   </head>
   <body>
-   <h3>A Brief Tour and Current Traffic in Guelph, Ontario</h3>
-    <h6> Click on the markers for additional information about certain locations. Drag the orange man around to explore Guelph! </h6>
+   <h3>A Brief Tour and Current Traffic of the University of Guelph</h3>
+    <h6> Click on the markers for additional information about certain locations. Drag the orange man around to explore the campus! </h6>
     <div id="map"></div>
     <div id="pano"></div>
     <script>
 
-      function initialize() {
-      var start = {lat: 43.528535, lng: -80.225414}
+      function initialize() {             /*main function begins*/
+        var start = {lat: 43.528535, lng: -80.225414}   /*point coordinates and variable declaration*/
         var point1 = {lat: 43.532386, lng:  -80.226178};
         var point2 = {lat: 43.539670, lng:  -80.215249};
         var point3 = {lat: 43.527081, lng:  -80.224772};
         var point4 = {lat: 43.529863, lng:  -80.226476};
         var centerofmap = {lat: 43.53778, lng:-80.220400};
-        var map = new google.maps.Map(document.getElementById('map'), {
+        var map = new google.maps.Map(document.getElementById('map'), {     /*map is loaded*/
           center: centerofmap,
           zoom: 15});
-           var trafficLayer = new google.maps.TrafficLayer();
+           var trafficLayer = new google.maps.TrafficLayer();               /*traffic layer is implemented*/
   trafficLayer.setMap(map);
-        var panorama = new google.maps.StreetViewPanorama(
+        var panorama = new google.maps.StreetViewPanorama(                /*panoramic view is implemented*/
             document.getElementById('pano'), {
               position: start,
               pov: {
@@ -46,8 +49,10 @@
             });
         map.setStreetView(panorama);
         
-            var contentString1 = 
-            '<p>The University of Guelph was established in blah blah blah</p>';
+         var contentString1 =                                 /*content for point 1*/
+          '<p>This is the heart of the campus. Here is the University Centre and the infamous Cannon.'+
+             'There is a tradition where people can paint the cannon how ever they please, but must '+
+             'first sleep over night in a tent to do so.</p>';
 
         var infowindow1 = new google.maps.InfoWindow({
           content: contentString1
@@ -63,13 +68,12 @@
         });
         
         
-          var contentString2 = 
+        var contentString2 =            /*content for point 2*/
             '<p>The Arboretum is home to many woodland animals</p>';
 
         var infowindow2 = new google.maps.InfoWindow({
           content: contentString2
         });
-
         var marker2 = new google.maps.Marker({
           position: point2,
           map: map,
@@ -79,7 +83,7 @@
           infowindow2.open(map, marker2);
         });
         
-               var contentString3 = 
+        var contentString3 =            /*content for point 3*/
             '<p>This is the Guelph Gryphon statue</p>';
 
         var infowindow3 = new google.maps.InfoWindow({
@@ -95,7 +99,7 @@
           infowindow3.open(map, marker3);
         });
         
-                       var contentString4 = 
+        var contentString4 =            /*content for point 4*/
             '<p>This is the conservancy Gardens</p>';
 
         var infowindow4 = new google.maps.InfoWindow({
