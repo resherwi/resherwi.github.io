@@ -3,12 +3,12 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Marker Clustering</title>
+    <title>Pygmy Rabbit Sightings</title>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 100%;
+        height: 500px;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -19,6 +19,7 @@
     </style>
   </head>
   <body>
+    <h3> Pygmy Rabbit Sightings</h3>
     <div id="map"></div>
     <script>
 
@@ -26,16 +27,13 @@
 
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 3,
-          center: {lat: -28.024, lng: 140.887}
+          center: {lat: 48.910704, lng: -114.715311}
         });
 
         // Create an array of alphabetical characters used to label the markers.
         var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-        // Add some markers to the map.
-        // Note: The code uses the JavaScript Array.prototype.map() method to
-        // create an array of markers based on a given "locations" array.
-        // The map() method here has nothing to do with the Google Maps API.
+  
         var markers = locations.map(function(location, i) {
           return new google.maps.Marker({
             position: location,
@@ -48,9 +46,9 @@
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       }
       var locations = [
-        {lat: -31.563910, lng: 147.154312},
-        {lat: -33.718234, lng: 150.363181},
-        {lat: -33.727111, lng: 150.371124},
+        {lat: 43.859048, lng: -114.396739},
+        {lat: 43.905896, lng: -114.428970},
+        {lat: 44.237423, lng: -114.772763},
         {lat: -33.848588, lng: 151.209834},
         {lat: -33.851702, lng: 151.216968},
         {lat: -34.671264, lng: 150.863657},
