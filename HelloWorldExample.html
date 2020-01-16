@@ -1,50 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <title>Street View Side-By-Side</title>
     <style>
-       /* Set the size of the div element that contains the map */
-      #map {
-        height: 400px;  /* The height is 400 pixels */
-        width: 100%;  /* The width is the width of the web page */
-       }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map, #pano {
+        float: left;
+        height: 100%;
+        width: 50%;
+      }
     </style>
   </head>
   <body>
-    <h3>Current Traffic in Downtown Toronto</h3>
-    <h6>This map displays the current traffic in downtown Toronto as well as a street view </h6>
-    <!--The div element for the map -->
+   <h3>Current Traffic in Downtown Toronto</h3>
+    <h6>This map displays the current traffic in downtown Toronto as well as a street view. Drag the orange man around to explore downtown Toronto! </h6>
     <div id="map"></div>
+    <div id="pano"></div>
     <script>
-// Initialize and add the map
-function initMap() {
-  // The location of Uluru
-  var toronto = {lat: 43.652450, lng: -79.384576};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 14, center: toronto});
-  // The marker, positioned at Uluru
-  var trafficLayer = new google.maps.TrafficLayer();
+
+      function initialize() {
+        var toronto = {lat: 43.652450, lng:  -79.384576};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: toronto,
+          zoom: 14});
+           var trafficLayer = new google.maps.TrafficLayer();
   trafficLayer.setMap(map);
-}
- function initialize() {
-  var toronto = {lat: 43.652450, lng: -79.384576};
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: toronto,
-    zoom: 14
-  });
-  var panorama = new google.maps.StreetViewPanorama(
-      document.getElementById('pano'), {
-        position: fenway,
-        pov: {
-          heading: 34,
-          pitch: 10
-        }
-      });
-  map.setStreetView(panorama);
-}
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'), {
+              position: toronto,
+              pov: {
+                heading: 34,
+                pitch: 10
+              }
+            });
+        map.setStreetView(panorama);
+      }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdRKUVkEuXClbi6Td-5wQ3SyLunmtKxfg&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdRKUVkEuXClbi6Td-5wQ3SyLunmtKxfg&callback=initialize">
     </script>
   </body>
 </html>
