@@ -14,7 +14,9 @@
         height: 100%;
         width: 50%;
       }
-      
+      h3,h5 {
+        font-family: Arial;
+      }
     </style>
     <!--Sources used for template https://developers.google.com/maps/documentation/javascript/trafficlayer,
 https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/examples/streetview-simple,
@@ -22,7 +24,7 @@ https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript
   </head>
   <body>
    <h3>A Brief Tour and Current Traffic of the University of Guelph</h3>
-    <h6> Click on the markers for additional information about certain locations. Drag the orange man around to explore the campus! </h6>
+    <h5> Click on the markers for additional information about certain locations. Drag the orange man around to the markers and explore the campus! </h5>
     <div id="map"></div>
     <div id="pano"></div>
     <script>
@@ -50,9 +52,10 @@ https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript
         map.setStreetView(panorama);
         
          var contentString1 =                                 /*content for point 1*/
-          '<p>This is the heart of the campus. Here is the University Centre and the infamous Cannon.'+
-             'There is a tradition where people can paint the cannon how ever they please, but must '+
-             'first sleep over night in a tent to do so.</p>';
+          '<p>This is the heart of the campus. The University Centre, bookstore '+ 
+             'and the infamous Cannon are here.There is a tradition where people' +
+             'can paint the cannon how ever they please, but must first sleep' +
+             'over night in a tent beside the cannon to do so.</p>';
 
         var infowindow1 = new google.maps.InfoWindow({
           content: contentString1
@@ -69,7 +72,9 @@ https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript
         
         
         var contentString2 =            /*content for point 2*/
-            '<p>The Arboretum is home to many woodland animals</p>';
+            '<p>The Arboretum is a large forest with trails on campus. Many events' +
+            'and classes take place here. It is home to many woodland animals' +
+            'including rabbits, skunks, foxes, squirrels and coyotes.</p>';
 
         var infowindow2 = new google.maps.InfoWindow({
           content: contentString2
@@ -84,7 +89,8 @@ https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript
         });
         
         var contentString3 =            /*content for point 3*/
-            '<p>This is the Guelph Gryphon statue</p>';
+            '<p>This is the Guelph Gryphon statue. It was built in 2014 for the' +
+            '50th anniversary of the campus. It is fashioned out of bronze.</p>';
 
         var infowindow3 = new google.maps.InfoWindow({
           content: contentString3
@@ -100,7 +106,8 @@ https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript
         });
         
         var contentString4 =            /*content for point 4*/
-            '<p>This is the conservancy Gardens</p>';
+            '<p>This is the Conservatory Gardens. The glass greenhouse houses many' +
+            'exotic plants and was built in 1930. </p>';
 
         var infowindow4 = new google.maps.InfoWindow({
           content: contentString4
