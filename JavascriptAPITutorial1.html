@@ -2,34 +2,30 @@
 <html>
   <head>
     <style>
-       /* Set the size of the div element that contains the map */
+       
       #map {
-        height: 400px;  /* The height is 400 pixels */
-        width: 100%;  /* The width is the width of the web page */
+        height: 400px; 
+        width: 100%;  
        }
     </style>
   </head>
   <body>
-    <h3>My Google Maps Demo</h3>
-    <!--The div element for the map -->
+    <h3>Javascript API Tutorial 1</h3>
+    <h5> Parks in Anchorage, Alaska</h5>
     <div id="map"></div>
     <script>
-// Initialize and add the map
 function initMap() {
-  // The location of Uluru
-  var uluru = {lat: -25.344, lng: 131.036};
-  // The map, centered at Uluru
+  var alaska = {lat: 61.173617, lng: -149.885086};
+  var park1 = {lat: 61.151586, lng: -150.037169};
+  var park2 = {lat: 61.154044, lng: -149.760166};
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
+      document.getElementById('map'), {zoom: 13, center: alaska});
+ 
+  var marker1 = new google.maps.Marker({position: park1, map: map});
+  var marker2 = new google.maps.Marker({position: park2, map: map});
 }
     </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
+
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw4-z_O4d74X49eZIQVMWyBdG1ftrP92c&callback=initMap">
     </script>
