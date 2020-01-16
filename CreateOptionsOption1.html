@@ -25,10 +25,14 @@
     <script>
 
       function initialize() {
+      var start = {lat: 43.528535, lng: -80.225414}
         var point1 = {lat: 43.532386, lng:  -80.226178};
-        var start = {lat: 43.526998, lng:-80.224794};
+        var point2 = {lat: 43.539670, lng:  -80.215249};
+        var point3 = {lat: 43.527081, lng:  -80.224772};
+        var point4 = {lat: 43.529863, lng:  -80.226476};
+        var centerofmap = {lat: 43.53778, lng:-80.220400};
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: start,
+          center: centerofmap,
           zoom: 15});
            var trafficLayer = new google.maps.TrafficLayer();
   trafficLayer.setMap(map);
@@ -41,21 +45,72 @@
               }
             });
         map.setStreetView(panorama);
+        
             var contentString1 = 
             '<p>The University of Guelph was established in blah blah blah</p>';
 
-        var infowindow = new google.maps.InfoWindow({
+        var infowindow1 = new google.maps.InfoWindow({
           content: contentString1
         });
 
-        var marker = new google.maps.Marker({
+        var marker1 = new google.maps.Marker({
           position: point1,
           map: map,
-          title: 'Uluru (Ayers Rock)'
+          title: 'University of Guelph'
         });
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
+        marker1.addListener('click', function() {
+          infowindow1.open(map, marker1);
         });
+        
+        
+          var contentString2 = 
+            '<p>The Arboretum is home to many woodland animals</p>';
+
+        var infowindow2 = new google.maps.InfoWindow({
+          content: contentString2
+        });
+
+        var marker2 = new google.maps.Marker({
+          position: point2,
+          map: map,
+          title: 'Arboretum'
+        });
+        marker2.addListener('click', function() {
+          infowindow2.open(map, marker2);
+        });
+        
+               var contentString3 = 
+            '<p>This is the Guelph Gryphon statue</p>';
+
+        var infowindow3 = new google.maps.InfoWindow({
+          content: contentString3
+        });
+
+        var marker3 = new google.maps.Marker({
+          position: point3,
+          map: map,
+          title: 'Gryphon Statue'
+        });
+        marker3.addListener('click', function() {
+          infowindow3.open(map, marker3);
+        });
+        
+                       var contentString4 = 
+            '<p>This is the conservancy Gardens</p>';
+
+        var infowindow4 = new google.maps.InfoWindow({
+          content: contentString4
+        });
+
+        var marker4 = new google.maps.Marker({
+          position: point4,
+          map: map,
+          title: 'Gardens'
+        });
+        marker4.addListener('click', function() {
+          infowindow4.open(map, marker4);
+        });
+        
       }
     </script>
     <script async defer
