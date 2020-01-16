@@ -18,17 +18,17 @@
     </style>
   </head>
   <body>
-   <h3>Current Traffic in Downtown Toronto</h3>
-    <h6>This map displays the current traffic in downtown Toronto as well as a street view. Drag the orange man around to explore downtown Toronto! </h6>
+   <h3>A Brief Tour and Current Traffic in Guelph, Ontario</h3>
+    <h6> Click on the markers for additional information about certain locations. Drag the orange man around to explore Guelph! </h6>
     <div id="map"></div>
     <div id="pano"></div>
     <script>
 
       function initialize() {
         var point1 = {lat: 43.532386, lng:  -80.226178};
-        var start = {lat: 43.526, lng:-80.22};
+        var start = {lat: 43.526998, lng:-80.224794};
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: toronto,
+          center: start,
           zoom: 15});
            var trafficLayer = new google.maps.TrafficLayer();
   trafficLayer.setMap(map);
