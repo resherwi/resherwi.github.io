@@ -8,14 +8,31 @@
         height: 100%;
         margin: 0;
         padding: 0;
+        background: darkred;
       }
       #map, #pano {
         float: left;
         height: 90%;
         width: 50%;
       }
-      h3,h5 {
+      h2 {
         font-family: Arial;
+        width: 525px;
+        padding: 10px;
+        background: whitesmoke;
+        border-radius: 5px;
+        margin-left: 20px;
+      }
+      h5{
+        font-family: Arial;
+        background: whitesmoke;
+        border-radius: 5px;
+        margin-left: 100px;
+      h6 {
+        text-align: center;
+        font-family: Arial;
+        background: whitesmoke;
+        border-radius: 5px;
       }
     </style>
     <!--Sources used for template https://developers.google.com/maps/documentation/javascript/trafficlayer,
@@ -23,7 +40,7 @@ https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript
 https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/examples/infowindow-simple-->
   </head>
   <body>
-   <h3>A Brief Tour and Current Traffic of the University of Guelph</h3>
+   <h2>A Brief Tour and Current Traffic of the University of Guelph</h2>
     <h5> Click on the markers for additional information about certain locations. Drag the orange man around to the markers and explore the campus! </h5>
     <div id="map"></div>
     <div id="pano"></div>
@@ -127,5 +144,6 @@ https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdRKUVkEuXClbi6Td-5wQ3SyLunmtKxfg&callback=initialize">
     </script>
+    <h6> Webpage by: Rebecca Sherwin </h6>
   </body>
 </html>
