@@ -42,20 +42,18 @@
         zoom: 12
       });
     
-      // Add a feature layer to map with all features visible (no filter)
-    
       var featureLayer = new FeatureLayer({
         url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trails_Styled/FeatureServer/0",
-        outFields: ["*"],  // Return all fields to client
-        popupTemplate: {  // Enable a popup on client
-          title: "{TRL_NAME}", // Show field value
-          content: "The trail elevation gain is {ELEV_GAIN} ft."  // Show field value
+        outFields: ["*"],  
+        popupTemplate: {  
+          title: "{TRL_NAME}", 
+          content: "The trail elevation gain is {ELEV_GAIN} ft."  
         }
       });
     
       map.add(featureLayer);
     
-      // Create a UI with the filter expressions
+      
     
       var sqlExpressions = ["TRL_ID > 0", "TRL_ID = 0", "USE_BIKE = 'Yes'", "USE_BIKE = 'No'", "ELEV_GAIN < 1000", "ELEV_GAIN > 1000", "TRL_NAME = 'California Coastal Trail'"];
       
@@ -71,18 +69,13 @@
       view.ui.add(selectFilter, "top-right");
         
       selectFilter.addEventListener('change', function (event) {
-        // Server side
-        //setFeatureLayerFilter(event.target.value);
-        // Client side
         setFeatureLayerViewFilter(event.target.value);
       });
     
-      // Server-side filter
       function setFeatureLayerFilter(expression) {
         featureLayer.definitionExpression = expression;
       }
     
-      // Client-side filter
       function setFeatureLayerViewFilter(expression) {
         view.whenLayerView(featureLayer).then(function(featureLayerView) {
           featureLayerView.filter = {
