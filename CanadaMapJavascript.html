@@ -17,16 +17,24 @@
   
   <script>
 require([
-      "esri/Map",
+      "esri/WebMap",
       "esri/views/MapView",
       "esri/Graphic",
       "esri/layers/GraphicsLayer"
-    ], function(Map, MapView, Graphic, GraphicsLayer) {
+    ], function(WebMap, MapView, Graphic, GraphicsLayer) {
   
    var webmap = new WebMap({
         portalItem: {
           id: "21702910a4f64c87b665c8bff2d1323a"
         }
+      });
+  
+  var view = new MapView({
+        container: "viewDiv",
+        //*** UPDATE ***//
+        map: webmap
+        //center: [-118.80500,34.02700],
+        //zoom: 13
       });
   var graphicsLayer = new GraphicsLayer();
   map.add(graphicsLayer);  
