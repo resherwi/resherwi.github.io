@@ -23,17 +23,11 @@ require([
       "esri/layers/GraphicsLayer"
     ], function(Map, MapView, Graphic, GraphicsLayer) {
   
-  var map = new Map({
-    basemap: "topo-vector"
-  });
-    
-  var view = new MapView({
-    container: "viewDiv",  
-    map: map,
-    center: [-118.80500,34.02700],
-    zoom: 13
-  });
-  
+   var webmap = new WebMap({
+        portalItem: {
+          id: "21702910a4f64c87b665c8bff2d1323a"
+        }
+      });
   var graphicsLayer = new GraphicsLayer();
   map.add(graphicsLayer);  
   
