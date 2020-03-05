@@ -30,7 +30,7 @@
         map.addSource('wms-test-source', {
             'type': 'raster',
             'tiles': [
-                'https://luna.flemingcollege.ca:6443/arcgis/rest/services/Geom99/resherwiCanadaPro/MapServer/export?bbox=2165922.2352821594,484929.01086549275,9712257.736185912,5525954.0956754945'
+                'https://luna.flemingcollege.ca:6443/arcgis/rest/services/Geom99/resherwiCanadaPro/MapServer/export?bbox={bbox-epsg-3857}&bboxSR=EPSG%3A3857&layers=0&layerDefs=&size=256%2c256&imageSR=&format=png&transparent=true&dpi=&time=&layerTimeOptions=&dynamicLayers=&gdbVersion=&mapScale=&f=image'
             ],
             'tileSize': 256
         });
