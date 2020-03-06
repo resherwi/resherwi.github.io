@@ -26,7 +26,7 @@
         center: [-100.0, 50.0]
     });
     // Modify this to place your own map service URL here. Show one or more provinces--do not just show Ontario like this example. 
-    var url = 'https://luna.flemingcollege.ca:6443/arcgis/rest/services/Geom99/resherwiCanadaPro/MapServer/0/query?where=PRNAME%3D%27Ontario%27&returnGeometry=true&returnTrueCurves=false&returnExtentOnly=false&f=geojson';
+    var url = 'https://luna.flemingcollege.ca/arcgis/rest/services/DemoMapExample/MapServer/0/query?where=PRNAME%3D+%27Yukon%27&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&having=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentOnly=false&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=geojson';
     map.on('load', function() {
         window.setInterval(function() {
             map.getSource('canada').setData(url);
@@ -38,7 +38,7 @@
             'type': 'fill',
             'source': 'canada',
             'layout': {},
-            'paint': {'fill-color': '#088','fill-opacity': 0.8}
+            'paint': {'fill-color': '#056','fill-opacity': 0.8}
         });
     });
 </script>
